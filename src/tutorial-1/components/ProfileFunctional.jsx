@@ -13,4 +13,4 @@ function ProfileFunctional(props) {
     );
 }
 
-export { ProfileFunctional };
+export default ProfileFunctional;
