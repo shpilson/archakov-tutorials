@@ -1,6 +1,11 @@
+import { ProfileFunctional } from './components/ProfileFunctional';
+
 function App() {
     return (
-        <h1>Урок №1</h1>
+        <>
+            <h1>Функциональный компонент</h1>
+            <ProfileFunctional name="Вася" registredAt={new Date(2021, 5, 22)} />
+        </>
     );
 }
 
