@@ -4,8 +4,7 @@ function App(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (email.length === 0 || password.length === 0) {
-
+        if (!email.length.trim() || !password.length.trim()) {
             alert('Пожалуйста, заполните все поля')
             return
         }
@@ -13,7 +12,7 @@ function App(props) {
     }
 
     function inputChange(e) {
-        const value = e.target.value.trim()
+        const value = e.target.value
 
         switch (e.target.name) {
             case 'email':
