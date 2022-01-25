@@ -1,8 +1,10 @@
+import Accordion from "./components/Accordion";
+
 function App() {
     return (
-        <>
-            <h1>Здесь что-то будет</h1>
-        </>
+        <div id="application">
+            <Accordion />
+        </div>
     );
 }
 
