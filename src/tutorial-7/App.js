@@ -1,7 +1,9 @@
-import { Nav, Navbar } from "react-bootstrap";
-import Article from "./components/Article";
-import About from "./components/About";
-import Home from "./components/Home";
+import Article from "./pages/Article";
+import About from "./pages/About";
+import Home from "./pages/Home";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
     const { pathname } = window.location;
@@ -9,28 +11,7 @@ export default function App() {
 
     return (
         <div className="App">
-            <header>
-                <h2>
-                    <a href="/">React Blog</a>
-                </h2>
-                <Nav variant="pills" defaultActiveKey="/">
-                    <Nav.Item>
-                        <Nav.Link eventKey="/home" to="/">
-                            Главная
-            </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="/home" to="/about">
-                            Обо мне
-            </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="/home" to="/profile">
-                            Профиль
-            </Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </header>
+            <Header />
             {pathname === "/" && (
                 <Home />
             )}
@@ -40,10 +21,7 @@ export default function App() {
             {pathname === "/about" && (
                 <About />
             )}
-            <br />
-            <Navbar bg="light" style={{ paddingLeft: 20 }}>
-                <Navbar.Brand href="#home">My site (c) 2021</Navbar.Brand>
-            </Navbar>
+            <Footer />
         </div >
     );
 }
