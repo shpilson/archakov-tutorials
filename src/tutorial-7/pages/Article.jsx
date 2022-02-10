@@ -1,7 +1,7 @@
-function Article({ id }) {
+function Article() {
     return (
         <div>
-            <h1>Статья №{id}</h1>
+            <h1>Статья №</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae distinctio fuga animi
                 aliquam sit id veritatis, doloribus ducimus quas, dignissimos non minima quia amet possimus?

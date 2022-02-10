@@ -1,27 +1,37 @@
-import Article from "./pages/Article";
-import About from "./pages/About";
-import Home from "./pages/Home";
+import { Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-export default function App() {
-    const { pathname } = window.location;
-    const postId = pathname.split('/').at(-1);
+import Article from "./pages/Article";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
+
+
+function App() {
     return (
         <div className="App">
             <Header />
-            {pathname === "/" && (
+
+            <Route path="/" exact>
                 <Home />
-            )}
-            {pathname === `/post/${postId}` && (
-                <Article id={postId} />
-            )}
-            {pathname === "/about" && (
+            </Route>
+            <Route path="/about">
                 <About />
-            )}
+            </Route>
+
+            <Route path="/post">
+                <Article />
+            </Route>
+
+            <Route path="/test">
+                <h1>Это тестовая статья</h1>
+            </Route>
+
             <Footer />
-        </div >
+        </div>
     );
 }
+
+export default App;
