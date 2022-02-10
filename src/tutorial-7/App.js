@@ -25,10 +25,6 @@ function App() {
                 <Article />
             </Route>
 
-            <Route path="/test">
-                <h1>Это тестовая статья</h1>
-            </Route>
-
             <Footer />
         </div>
     );
