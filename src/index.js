@@ -7,10 +7,14 @@ import './index.scss';
 // import App from './tutorial-3/App';
 // import App from './tutorial-5/App';
 // import App from './tutorial-6/App';
-import App from './tutorial-7/App';
 
-import "./tutorial-7/styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import App from './tutorial-7/App';
+// import "./tutorial-7/styles.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+
+import App from './auth-form/App';
+import "./auth-form/index.scss";
+
 
 ReactDOM.render(
   <React.StrictMode>
