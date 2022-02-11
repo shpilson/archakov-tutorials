@@ -20,6 +20,11 @@ const Header = () => {
                             Обо мне
                 </Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link as={NavLink} to="/profile">
+                            Профиль
+                </Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </header>
         </div>
