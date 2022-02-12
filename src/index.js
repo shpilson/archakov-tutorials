@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import './index.scss';
+// import { Router } from 'react-router';
+
 // import App from './tutorial-1/App';
 // import App from './tutorial-2/App';
 // import App from './tutorial-3/App';
@@ -12,15 +13,16 @@ import './index.scss';
 // import "./tutorial-7/styles.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-import App from './auth-form/App';
-import "./auth-form/index.scss";
+// import App from './register-form/App';
+// import "./register-form/index.scss";
+
+import App from './react-hook-form/App';
+import "./react-hook-form/index.scss";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
