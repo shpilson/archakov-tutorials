@@ -3,62 +3,95 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 function App() {
-    const [firstName, setFirstName] = React.useState('');
-    const [lastName, setLastName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const [fields, setFields] = React.useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    });
 
     const handleClickClear = () => {
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setPassword('');
+        setFields({
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: ''
+        });
     }
 
     const handleClickRegister = () => {
-        const form = {
-            firstName,
-            lastName,
-            email,
-            password
-        };
 
-        console.log(form);
+        if (!fields.email.includes('@')) {
+            alert('Почта неверная!')
+            return;
+        }
+
+        if (fields.firstName.length < 3 || fields.lastName.length < 3) {
+            alert('Имя или фамилия указаны неверно!')
+            return;
+        }
+
+        if (fields.password.length < 6) {
+            alert('Пароль должен быть больше 6 символов!')
+            return;
+        }
+
+        console.log('Зарегистрировались!', fields);
         handleClickClear();
     }
+
+    const handleChangeInput = event => {
+        const { name, value } = event.target;
+        setFields({
+            ...fields, [name]: value
+        });
+    }
+
+    const isValid = !!fields.firstName && !!fields.lastName && !!fields.email && !!fields.password;
+
 
     return (
         <div className="App">
             <div className="row">
                 <TextField
-                    onChange={(event) => setFirstName(event.target.value)}
-                    value={firstName}
+                    name="firstName"
+                    onChange={handleChangeInput}
+                    value={fields.firstName}
                     label="Имя"
                     fullWidth />
                 <TextField
-                    onChange={(event) => setLastName(event.target.value)}
-                    value={lastName}
+                    name="lastName"
+                    onChange={handleChangeInput}
+                    value={fields.lastName}
                     label="Фамилия"
                     fullWidth />
             </div>
             <div className="row">
                 <TextField
-                    onChange={(event) => setEmail(event.target.value)}
-                    value={email}
+                    name="email"
+                    onChange={handleChangeInput}
+                    value={fields.email}
                     label="E-mail"
                     fullWidth />
                 <TextField
-                    onChange={(event) => setPassword(event.target.value)}
-                    value={password}
+                    name="password"
+                    onChange={handleChangeInput}
+                    value={fields.password}
                     label="Пароль"
                     type="password"
                     fullWidth />
             </div>
             <br />
-            <Button onClick={handleClickRegister} variant="contained" color="primary">
+            <Button
+                disabled={!isValid}
+                onClick={handleClickRegister} variant="contained"
+                color="primary">
                 Зарегистрироваться
             </Button>
-            <Button onClick={handleClickClear} variant="contained" color="secondary">
+            <Button
+                onClick={handleClickClear}
+                variant="contained"
+                color="secondary">
                 Очистить
             </Button>
         </div >
