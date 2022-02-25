@@ -1,6 +1,7 @@
 import React from 'react';
 // import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // import { Router } from 'react-router';
 
 // import App from './tutorial-1/App';
@@ -21,7 +22,9 @@ import App from './tutorial-8/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
